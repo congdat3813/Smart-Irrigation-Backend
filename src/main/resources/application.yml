@@ -1,0 +1,24 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /smart-irrigation
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smartirrigation_data
+    username: postgres
+    password: 1
+    driverClassName: org.postgresql.Driver
+    hikari:
+      pool-name: smart-irrigation-pool
+      maximum-pool-size: 50 #This means that HikariCP can maintain a maximum of 50 connections in the pool at any given
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        id:
+          new_generator_mappings: false
+jwt:
+  token:
+    validity: 10000
+  secret: YP5ACUpr5rzNUtHQ28uTw8feHrcNYomlEM5bhe6ezGhxmPHaL29kGOVR5GbUllQT
